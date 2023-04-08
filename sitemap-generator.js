@@ -28,10 +28,7 @@ function generateSitemap() {
 		return `<url><loc>${baseUrl}${path}</loc></url>`
 	})
 	urls.push(`<url><loc>${baseUrl}/</loc></url>`) // add root URL to sitemap
-	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-		${urls.join('')}
-	</urlset>`
+	const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join('')}</urlset>`
 	fs.writeFileSync('./sitemap.xml', sitemap)
 }
 
